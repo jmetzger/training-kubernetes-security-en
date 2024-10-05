@@ -2,7 +2,26 @@
 
 ## Agenda 
 
+ 1. Grundlagen
+    * Die sicherheitsrelevanten Ebenen in Kubernetes
+    * Typische Angriffsvektoren 
 
+ 1. Nodes 
+    * Absichern der Nodes
+    * Härten und die Angriffsoberfläche verringern 
+
+ 1. RBAC
+    * Wie funktioniert RBAC ?
+    * An welchen Stelle spielt RBAC in Kubenetes eine Rolle ?
+    * Komponenten / Objekte von RBAC
+    * Praktische Umsetzung von RBAC
+
+ 1. Sicherheitsregeln durchsetzen
+    * Admission Controller
+    * PSA (PodSecurity Adminssion)
+    * Übung mit dem PSA
+   
+  
 
 
 ## Backlog 
