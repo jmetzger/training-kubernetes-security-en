@@ -21,7 +21,36 @@
     * PSA (PodSecurity Adminssion)
     * Übung mit dem PSA
    
-  
+ 1. Pod Sicherheit
+    * ServiceAccounts (automount) mounten oder nicht?
+    * Muss jeder Pod auf den Kuberentes Api - Server zugreifen können?
+    * Sicherheitskritische Themen in Bezug auf Pods
+
+ 1. Unprivilegierte Pods/Container
+    * Was ist zu beachten?
+    * Welche Images setze ich ein?
+    * Wie kann ich Probleme lösen?
+    * Wie debugge ich non-root - Container/Pods?
+    * Praktische Verwendung eins non-root pod
+
+ 1. Der Security Context
+    * Was ist der SecurityContext?
+    * seccomp
+    * Linux capabilities
+    * privileged/unprivileged
+    * appArmor / SELinux
+     
+ 1. Network Policies
+    * Network Policies verstehen
+    * Network Policies praktisch umsetzen
+
+ 1. ServiceMesh
+    * Warum ein ServiceMesh ?
+    * Funktionsweise eines ServiceMeshs?
+    * Verwendung eines ServiceMeshs anhand von istio
+
+ 1. Image Security
+    * Image Security Scanning
 
 
 ## Backlog 
