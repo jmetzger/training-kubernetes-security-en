@@ -3,6 +3,7 @@
 ## Agenda 
 
  1. Grundlagen
+    * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
     * Die sicherheitsrelevanten Ebenen in Kubernetes
     * Typische Angriffsvektoren 
 
