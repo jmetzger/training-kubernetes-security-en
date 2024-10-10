@@ -45,7 +45,7 @@
     * [Which should I use ? How to find out if abandoned ?]
 
  1. Reaction 
-    * [The Audits Logs](kubernetes/security/reaction/auditing.md)
+    * [The Audits Logs](/security/reaction/auditing.md)
 
    
 
@@ -53,10 +53,6 @@
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
     * Die sicherheitsrelevanten Ebenen in Kubernetes
     * Typische Angriffsvektoren 
-
- 1. Nodes 
-    * Absichern der Nodes
-    * Härten und die Angriffsoberfläche verringern 
 
  1. RBAC
     * Wie funktioniert RBAC ?
