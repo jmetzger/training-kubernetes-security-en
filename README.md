@@ -2,7 +2,8 @@
 
 ## Agenda 
 
- 1. Overview
+ 1. Starting
+    * [The truth about security](/kubernetes/security/truth.md)
     * [The architecture of Kubernetes](/kubernetes/architecture.md)
     * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
     * []
