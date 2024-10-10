@@ -6,11 +6,11 @@
     * [The truth about security](/kubernetes/security/truth.md)
     * [The architecture of Kubernetes](/kubernetes/architecture.md)
     * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
-    * []
+    * [Kill Chain]()
    
  1. Getting hacked
     * [Why is a cluster so rewarding to hack]()
-    * [Starting with Tesla]()
+    * [Starting with Tesla](https://arstechnica.com/information-technology/2018/02/tesla-cloud-resources-are-hacked-to-run-cryptocurrency-mining-malware/)
 
  1. Category 1 by Layer: OS / Kernel
     * [Securing the OS and the Kernel](kubernetes-/security/01-os-kernel/hardening-os-kernel.md)
