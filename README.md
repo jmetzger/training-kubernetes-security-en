@@ -2,6 +2,11 @@
 
 ## Agenda 
 
+ 1. Overview
+    * [The architecture of Kubernetes](/kubernetes/architecture.md)
+    * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
+
+
  1. Grundlagen
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
     * Die sicherheitsrelevanten Ebenen in Kubernetes
