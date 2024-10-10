@@ -17,16 +17,34 @@
  1. Category 2 by Layer: Cluster
     * [Securing the components]()
     * [Least Privileges with RBAC]()
+    * [AdmissionController - What for ? ]()
+    * [AdmissionController - How they work ?]()
    
- 1. Category 3 by Layer: Container
-   
+ 1. Category 3 by Layer: Pods Container
+
+    * [Great but still alpha User Namespaces]()
+    
  1. Category 4 by Layer: Application 
 
- 
+ 1. Development
+
+ 1. Build
+
+ 1. Deployment
+
+ 1. Production 
+
+ 1. Prevention 
+
+ 1. Detection / Monitoring 
+    * [Vulnerability Scanning]()
+    * [Runtime Scanning - Falco] 
+    * [Should I use security tools ?]
+    * [Which should I use ? How to find out if abandoned ?]
+
+ 1. Reaction 
 
    
- 3. Future / Not Stable features
-    * [User Namespaces]()
 
  1. Grundlagen
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
