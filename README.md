@@ -47,8 +47,6 @@
  1. Reaction 
     * [The Audits Logs](/security/reaction/auditing.md)
 
-   
-
  1. Grundlagen
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
     * Die sicherheitsrelevanten Ebenen in Kubernetes
@@ -96,6 +94,8 @@
  1. Image Security
     * Image Security Scanning
 
+ 1. Documentation
+    [Great video about attacking kubernetes - older, but some stuff is still applicable](https://www.youtube.com/watch?v=HmoVSmTIOxM)
 
 ## Backlog 
 
