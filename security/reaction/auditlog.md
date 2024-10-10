@@ -107,9 +107,44 @@ rules:
 
 ## Step 3: 2nd -> session: Change settings in /etc/kubernetes/manifests/kube-apiserver.yaml 
 
+```
+# security copy
+cp /etc/kubernetes/manifests/kube-apiserver.yaml /root
+```
 
+```
+# Add lines in /etc/kubernetes/manifests/kube.apiserver.yaml 
+- --audit-log-path=/var/log/kubernetes/apiserver/audit.log
+- --audit-policy-file=/etc/kubernetes/audit-policies.yaml
+```
 
+```
+# Add lines under volumeMounts
+- mountPath: /etc/kubernetes/audit-policy.yaml
+  name: audit
+  readOnly: true
+- mountPath: /var/log/kubernetes/apiserver/audit/
+  name: audit-log
+  readOnly: false
+```
 
+```
+# Add volumes lines under volumes
+- name: audit 
+  hostPath: 
+    path: /etc/kubernetes/audit-policy.yaml 
+    type: File 
+
+- name: audit-log 
+  hostPath: 
+    path: /var/log/kubernetes/audit/ 
+    type: DirectoryOrCreate 
+
+```
+
+## Step 4: 1st -> session 
+
+![image](https://github.com/user-attachments/assets/3a286912-d179-4de4-bbb6-513f9e611259)
 
 ## Reference 
 
