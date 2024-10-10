@@ -1,6 +1,6 @@
-# Aufbau 
+# Architecture
 
-## Schaubild 
+## Overview 
 
 ![image](https://github.com/user-attachments/assets/751339d5-f279-483b-a9c5-1ba196c4c3b6)
 
