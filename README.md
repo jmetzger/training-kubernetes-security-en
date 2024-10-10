@@ -6,6 +6,8 @@
     * [The architecture of Kubernetes](/kubernetes/architecture.md)
     * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
 
+ 2. OS / Kernel
+    * [Securing the OS and the Kernel](kubernetes-/security/01-os-kernel/hardening-os-kernel.md)
 
  1. Grundlagen
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
