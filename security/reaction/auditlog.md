@@ -12,25 +12,21 @@
 ![image](https://github.com/user-attachments/assets/39a132aa-0f26-457a-9f2c-4dc3a55f4ee5)
 
 
-## Step 1: (on control plane): Watch kube-apiserver - pod on controlplane 
+## Step 1: 1st -> session (on control plane): Watch kube-apiserver - pod on controlplane 
 
 ```
 # we want to 
 watch crictl pods | grep api
 ```
 
-## Step 2: on client: create a policy
+## Step 2: 2nd -> session (on control plane): create a policy
 
 ```
-cd 
-mkdir -p manifests 
-cd manifests 
-mkdir audit 
-cd audit
+cd /etc/kubernetes
 ```
 
 ```
-nano audit.yaml
+nano audit-policy.yaml
 ```
 
 ```
@@ -106,8 +102,13 @@ rules:
 ```
 
 ```
-kubectl apply -f .
+# Important: You do not need to apply/create it.
 ```
+
+## Step 3: 2nd -> session: Change settings in /etc/kubernetes/manifests/kube-apiserver.yaml 
+
+
+
 
 
 ## Reference 
