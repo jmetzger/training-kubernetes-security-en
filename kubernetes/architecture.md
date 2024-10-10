@@ -2,31 +2,31 @@
 
 ## Schaubild 
 
-![Kubernetes Architecture - src: syseleven](https://www.syseleven.de/wp-content/uploads/2020/11/syseleven-webiste-loesungen-kubernetes-modell-800x400-web.jpg)
+![image](https://github.com/user-attachments/assets/751339d5-f279-483b-a9c5-1ba196c4c3b6)
 
-## Komponenten / Grundbegriffe
+## Components
 
 ### Master (Control Plane)
 
-#### Aufgaben 
+#### Jobs
 
-  * Der Master koordiniert den Cluster
-  * Der Master koordiniert alle Aktivitäten in Ihrem Cluster
-    * Planen von Anwendungen
-    * Verwalten des gewünschten Status der Anwendungen
-    * Skalieren von Anwendungen
-    * Rollout neuer Updates.
+  * The master coordinates the cluster
+  * The master coordinates the activities in the cluster
+    * scheduling of applications
+    * to take charge of the desired state of application 
+    * scaling of applications 
+    * rollout of new updates
 
-#### Komponenten des Masters 
+#### Components of the Master 
 
 ##### etcd
 
-  * Verwalten der Konfiguration des Clusters (key/value - pairs) 
+  * Persistent Storage (like a database), stores configuration and status of the cluster 
   
 ##### kube-controller-manager  
   
-  * Zuständig für die Überwachung der Stati im Cluster mit Hilfe von endlos loops. 
-  * kommuniziert mit dem Cluster über die kubernetes-api (bereitgestellt vom kube-api-server)
+  * In charge of making sure the desired state is achieved (done trough endless loops)  
+  * Communicates with the cluster through the kubernetes-api (kube-api-server)
 
 ##### kube-api-server 
 
@@ -49,10 +49,10 @@
 
 ### Pod/Pods 
 
-  * Pods sind die kleinsten einsetzbaren Einheiten, die in Kubernetes erstellt und verwaltet werden können.
-  * Ein Pod (übersetzt Gruppe) ist eine Gruppe von einem oder mehreren Containern
-    * gemeinsam genutzter Speicher- und Netzwerkressourcen   
-    * Befinden sich immer auf dem gleich virtuellen Server 
+  * pods are the smallest unit you can roll out on the clustebernetes erstellt und verwaltet werden können.
+  * a pod (basically another word for group) is a group of 1 or more containers
+    * mutually used storage and network resources (all containers in the same pod can be reached with localhost)   
+    * They are always on the same (virtual server)
     
 ## Control Plane Node (former: master) - components 
 
@@ -66,16 +66,15 @@
 
 ```
 Node Agent that runs on every node (worker) 
-Er stellt sicher, dass Container in einem Pod ausgeführt werden.
+its job is to download images and start containers 
 ```
 
-### Kube-proxy 
+### kube-proxy 
 
-  * Läuft auf jedem Node 
-  * = Netzwerk-Proxy für die Kubernetes-Netzwerk-Services.
-  * Kube-proxy verwaltet die Netzwerkkommunikation innerhalb oder außerhalb Ihres Clusters.
+  * Runs on all of the nodes (DaemonSet)
+  * Is in charge of setting up the network rules in iptables for the network services 
+  * Kube-proxy is in charge of the network communication inside of the cluster and to the outside
   
-## Referenzen 
+## ref:
 
-  * https://www.redhat.com/de/topics/containers/kubernetes-architecture
-
+  * https://www.redhat.com/en/topics/containers/kubernetes-architecture
