@@ -114,7 +114,7 @@ cp /etc/kubernetes/manifests/kube-apiserver.yaml /root
 
 ```
 # Add lines in /etc/kubernetes/manifests/kube.apiserver.yaml 
-- --audit-log-path=/var/log/kubernetes/apiserver/audit.log
+- --audit-log-path=/var/log/kubernetes/apiserver/audit/audit.log
 - --audit-policy-file=/etc/kubernetes/audit-policies.yaml
 ```
 
@@ -144,7 +144,14 @@ cp /etc/kubernetes/manifests/kube-apiserver.yaml /root
 
 ## Step 4: 1st -> session 
 
-![image](https://github.com/user-attachments/assets/3a286912-d179-4de4-bbb6-513f9e611259)
+![image](https://github.com/user-attachments/assets/3a286912-d179-4de4-bbb6-513f9e611259)c
+
+## Step 5: 2nd -> session
+
+```
+# There should be enought noise already
+cat /var/log/kubernetes/audit/audit.log
+```
 
 ## Reference 
 
