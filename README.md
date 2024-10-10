@@ -5,9 +5,28 @@
  1. Overview
     * [The architecture of Kubernetes](/kubernetes/architecture.md)
     * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
+    * []
+   
+ 1. Getting hacked
+    * [Why is a cluster so rewarding to hack]()
+    * [Starting with Tesla]()
 
- 2. OS / Kernel
+ 1. Category 1 by Layer: OS / Kernel
     * [Securing the OS and the Kernel](kubernetes-/security/01-os-kernel/hardening-os-kernel.md)
+   
+ 1. Category 2 by Layer: Cluster
+    * [Securing the components]()
+    * [Least Privileges with RBAC]()
+   
+ 1. Category 3 by Layer: Container
+   
+ 1. Category 4 by Layer: Application 
+
+ 
+
+   
+ 3. Future / Not Stable features
+    * [User Namespaces]()
 
  1. Grundlagen
     * [Workloads-Phasen und Absicherung](grundlagen/workloads-phasen-und-absicherung.md)
