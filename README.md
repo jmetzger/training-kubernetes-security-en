@@ -14,6 +14,7 @@
 
  1. Category 1 by Layer: OS / Kernel
     * [Securing the OS and the Kernel](kubernetes-/security/01-os-kernel/hardening-os-kernel.md)
+    * [Kernel Hardening Checker](kernel/hardening.md)
    
  1. Category 2 by Layer: Cluster
     * [Securing the components]()
