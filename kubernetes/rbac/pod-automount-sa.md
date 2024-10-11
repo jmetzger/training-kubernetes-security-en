@@ -3,14 +3,14 @@
 ## Walkthrough 
 
 ```
-cd
-mkdir -p manifests
-cd manifests
-mkdir podsa
-cd podsa
+kubectl run -it --rm kubectltester --image=alpine -- sh 
 ```
 
 ```
-kubectl run -it --rm kubectltester --image=bitnami/kubectl -- sh 
+# in shell
+apk add kubectl
+# it uses in in-cluster configuration in folder
+# /var/run/secrets/kubernetes.io/serviceaccount 
+kubectl auth can-i --list 
 ```
 
