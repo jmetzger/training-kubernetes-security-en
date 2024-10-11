@@ -23,7 +23,7 @@ metadata:
 kubectl apply -f service-account.yml 
 ```
 
-### Mini-Step 1.5: Secret erstellen 
+### Mini-Step 1.5: create Secret
 
   * From Kubernetes 1.25 tokens are not created automatically when creating a service account (sa)
   * You have to create them manually with annotation attached 
