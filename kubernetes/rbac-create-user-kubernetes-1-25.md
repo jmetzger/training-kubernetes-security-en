@@ -1,4 +1,4 @@
-# RBAC - Create user for kubeconfig with restricted permissions (microk8s) 
+# RBAC - Create user for kubeconfig with restricted permissions
 
 ## Schritt 1: Nutzer-Account auf Server anlegen und secret anlegen / in Client 
 
