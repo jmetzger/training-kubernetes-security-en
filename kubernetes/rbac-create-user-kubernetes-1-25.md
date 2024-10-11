@@ -8,7 +8,7 @@ mkdir -p manifests/rbac
 cd manifests/rbac
 ```
 
-###  Mini-Step 1: defoinition of the user 
+###  Mini-Step 1: definition of the user 
 
 ```
 # vi service-account.yml 
