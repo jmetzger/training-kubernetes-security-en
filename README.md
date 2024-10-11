@@ -28,24 +28,6 @@
     * [Hacking and exploration session HostPID](explore/01-hack-session-hostpid.md)
     * [Great but still alpha User Namespaces]()
     
- 1. Category 4 by Layer: Application 
-
- 1. Development
-
- 1. Build
-
- 1. Deployment
-
- 1. Production 
-
- 1. Prevention 
-
- 1. Detection / Monitoring 
-    * [Vulnerability Scanning]()
-    * [Runtime Scanning - Falco] 
-    * [Should I use security tools ?]
-    * [Which should I use ? How to find out if abandoned ?]
-
  1. Reaction 
     * [The Audits Logs](/security/reaction/auditing.md)
 
