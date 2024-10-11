@@ -1,6 +1,6 @@
 # RBAC - Create user for kubeconfig with restricted permissions
 
-## Schritt 1: Nutzer-Account auf Server anlegen und secret anlegen / in Client 
+## Schritt 1: Create a service account and a secret 
 
 ```
 cd 
@@ -8,7 +8,7 @@ mkdir -p manifests/rbac
 cd manifests/rbac
 ```
 
-###  Mini-Schritt 1: Definition für Nutzer 
+###  Mini-Step 1: defoinition of the user 
 
 ```
 # vi service-account.yml 
@@ -23,7 +23,7 @@ metadata:
 kubectl apply -f service-account.yml 
 ```
 
-### Mini-Schritt 1.5: Secret erstellen 
+### Mini-Step 1.5: Secret erstellen 
 
   * From Kubernetes 1.25 tokens are not created automatically when creating a service account (sa)
   * You have to create them manually with annotation attached 
@@ -45,11 +45,10 @@ kubectl apply -f .
 ```
 
 
-### Mini-Schritt 2: ClusterRole festlegen - Dies gilt für alle namespaces, muss aber noch zugewiesen werden
+### Mini-Schritt 2: ClusterRole creation - Valid for all namespaces but it has to get assigned to a clusterrolebinding or rolebinding
 
 ```
-## Bevor sie zugewiesen ist, funktioniert sie nicht - da sie keinem Nutzer zugewiesen ist 
-
+## Does not work, before there is no assignment 
 # vi pods-clusterrole.yml 
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -65,7 +64,7 @@ rules:
 kubectl apply -f pods-clusterrole.yml 
 ```
 
-### Mini-Schritt 3: Die ClusterRolle den entsprechenden Nutzern über RoleBinding zu ordnen 
+### Mini-Schritt 3: Assigning the clusterrole to a specific service account 
 ```
 # vi rb-training-ns-default-pods.yml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -91,6 +90,7 @@ kubectl apply -f rb-training-ns-default-pods.yml
 
 ```
 kubectl auth can-i get pods -n default --as system:serviceaccount:default:training
+kubectl auth can-i --list 
 ```
 
 ## Schritt 2: Context anlegen / Credentials auslesen und in kubeconfig hinterlegen (ab Kubernetes-Version 1.25.) 
