@@ -24,6 +24,7 @@
    
  1. Category 3 by Layer: Pods Container
 
+    * [Hacking and exploration session HostPID](explore/01-hack-session-hostpid.md)
     * [Great but still alpha User Namespaces]()
     
  1. Category 4 by Layer: Application 
