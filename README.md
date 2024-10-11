@@ -5,7 +5,7 @@
  1. Starting
     * [The truth about security](/kubernetes/security/truth.md)
     * [The architecture of Kubernetes](/kubernetes/architecture.md)
-    * [Architecture DeepDive]()
+    * [Architecture DeepDive](https://github.com/jmetzger/training-kubernetes-advanced/assets/1933318/1ca0d174-f354-43b2-81cc-67af8498b56c))
     * [Layers to protect (Security)](/kubernetes/security/basics/layers.md) 
     * [Kill Chain](kill-chain.md)
    
