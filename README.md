@@ -45,7 +45,7 @@
     * [kubectl check your permission - can-i](kubernetes/rbac/can-i.md)
     * An welchen Stelle spielt RBAC in Kubenetes eine Rolle ?
     * Komponenten / Objekte von RBAC
-    * Praktische Umsetzung von RBAC
+    * [practical exercise rbac](kubernetes/rbac-create-user-kubernetes-1-25.md)
 
  1. Sicherheitsregeln durchsetzen
     * Admission Controller
