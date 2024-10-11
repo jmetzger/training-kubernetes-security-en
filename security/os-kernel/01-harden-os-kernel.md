@@ -26,7 +26,7 @@ kernel.modules_disabled = 1
 
 ## OS-Patching 
 
-  * Patch frequently. Eventually using
+  * Patch frequently. Eventually using unattended-upgrades 
 
 ## Hardening Guide
 
