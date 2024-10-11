@@ -86,19 +86,18 @@ subjects:
 kubectl apply -f rb-training-ns-default-pods.yml
 ```
 
-### Mini-Schritt 4: Testen (klappt der Zugang) 
-
+### Mini-Step 4: Test it (does the access work)
 ```
 kubectl auth can-i get pods -n default --as system:serviceaccount:default:training
 kubectl auth can-i --list --as system:serviceaccount:default:training
 ```
 
-## Schritt 2: Context anlegen / Credentials auslesen und in kubeconfig hinterlegen (ab Kubernetes-Version 1.25.) 
+## Schritt 2: create Context / read Credentials and put them in kubeconfig (the Kubernetes-Version 1.25. way) 
 
-### Mini-Schritt 1: kubeconfig setzen 
+### Mini-Step 1: kubeconfig setzen 
 
 ```
-kubectl config set-context training-ctx --cluster microk8s-cluster --user training
+kubectl config set-context training-ctx --cluster kubernetes --user training
 
 # extract name of the token from here 
 
@@ -112,26 +111,20 @@ kubectl get deploy
 # Error from server (Forbidden): pods is forbidden: User "system:serviceaccount:kube-system:training" cannot list # resource "pods" in API group "" in the namespace "default"
 ```
 
-### Mini-Schritt 2:
+### Mini-Step 2:
 ```
 kubectl config use-context training-ctx
 kubectl get pods 
 ```
 
-### Mini-Schritt 3: Zurück zum alten Default-Context 
+### Mini-Step 3: back to the old context
 
 ```
 kubectl config get-contexts
 ```
 
 ```
-CURRENT   NAME           CLUSTER            AUTHINFO    NAMESPACE
-          microk8s       microk8s-cluster   admin2
-*         training-ctx   microk8s-cluster   training2
-```
-
-```
-kubectl config use-context microk8s  
+kubectl config use-context cluster-admin@kubernetes  
 ```
 
 
