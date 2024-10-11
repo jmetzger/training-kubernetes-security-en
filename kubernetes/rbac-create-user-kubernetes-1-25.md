@@ -90,7 +90,7 @@ kubectl apply -f rb-training-ns-default-pods.yml
 
 ```
 kubectl auth can-i get pods -n default --as system:serviceaccount:default:training
-kubectl auth can-i --list 
+kubectl auth can-i --list --as system:serviceaccount:default:training
 ```
 
 ## Schritt 2: Context anlegen / Credentials auslesen und in kubeconfig hinterlegen (ab Kubernetes-Version 1.25.) 
