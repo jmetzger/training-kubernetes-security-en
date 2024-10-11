@@ -49,7 +49,7 @@
 
 ### Pod/Pods 
 
-  * pods are the smallest unit you can roll out on the clustebernetes erstellt und verwaltet werden können.
+  * pods are the smallest unit you can roll out on the clusteber
   * a pod (basically another word for group) is a group of 1 or more containers
     * mutually used storage and network resources (all containers in the same pod can be reached with localhost)   
     * They are always on the same (virtual server)
