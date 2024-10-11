@@ -41,6 +41,7 @@
 
  1. RBAC
     * Wie funktioniert RBAC ?
+    * [kubeconfig Zertfikat entschlüsseln](kubernetes/rbac/decode-local-certificate.md)
     * An welchen Stelle spielt RBAC in Kubenetes eine Rolle ?
     * Komponenten / Objekte von RBAC
     * Praktische Umsetzung von RBAC
