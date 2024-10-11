@@ -19,6 +19,7 @@
    
  1. Category 2 by Layer: Cluster
     * [Securing the components]()
+    * [Securing kubelet](security)
     * [Least Privileges with RBAC]()
     * [AdmissionController - What for ? ]()
     * [AdmissionController - How they work ?]()
