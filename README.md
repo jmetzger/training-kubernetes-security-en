@@ -40,8 +40,9 @@
     * Typische Angriffsvektoren 
 
  1. RBAC
-    * Wie funktioniert RBAC ?
+    * How does RBAC work ?
     * [kubeconfig decode certificate](kubernetes/rbac/decode-local-certificate.md)
+    * [kubectl check your permission - can-i](kubernetes/rbac/can-i.md)
     * An welchen Stelle spielt RBAC in Kubenetes eine Rolle ?
     * Komponenten / Objekte von RBAC
     * Praktische Umsetzung von RBAC
