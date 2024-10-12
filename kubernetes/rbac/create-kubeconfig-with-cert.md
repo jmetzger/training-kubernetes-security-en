@@ -1,5 +1,10 @@
 # Create user for kubeconfig with cert 
 
+## Step 0: create an new rolebinding for the group (we want to use) 
+
+```
+kubectl create rolebinding developers --role=view --group=developers
+
 ## Step 1: on your client: create private certificate
 
 ```
@@ -104,7 +109,7 @@ kubectl config set-context jochen --user=jochen --server=kubernetes
 
 ```
 kubectl config use-context jochen
-kubectl cluster-info 
+kubectl get pods
 ```
 
 ## Ref:
