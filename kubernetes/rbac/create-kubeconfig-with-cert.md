@@ -9,6 +9,8 @@ mkdir -p certs
 openssl genrsa -out ~/certs/jochen.key 4096
 ```
 
+## Step 2: on your client: create csr (certificate signing request)
+
 ```
 nano ~/certs/jochen.csr.cnf
 ```
@@ -36,7 +38,7 @@ openssl req -in certs/jochen.csr --noout -text
 ```
 
 
-## Step 2: Send approval request to server 
+## Step 3: Send approval request to server 
 
 ```
 # get csr (base64 decoded)
@@ -44,7 +46,8 @@ cat ~/certs/jochen.csr | base64 | tr -d '\n'
 ```
 
 ```
-nano jochen-csr.yaml
+cd certs
+jochen-csr.yaml
 ```
 
 ```
@@ -62,9 +65,47 @@ spec:
 ```
 
 ```
-kubectl apply -f jochen-csr.yaml 
+kubectl apply -f jochen-csr.yaml
+kubectl get -f jochen-csr.yaml
 ```
 
+## Step 4: approve signing request
+
+```
+kubectl certificate approve jochen-authentication
+# or:
+kubectl certificate approve -f jochen-csr.yaml
+```
+
+## Step 5: get the approved certificate to be used
+
+```
+kubectl get csr jochen-authentication -o jsonpath='{.status.certificate}' | base64 --decode > ~/certs/jochen.crt
+```
+
+## Step 6: construct kubeconfig for new user
+
+```
+cd
+cd certs
+```
+
+```
+# create new user 
+kubectl config set-credentials jochen --client-certificate=jochen.crt --client-key=jochen.key
+```
+
+```
+# add a new context
+kubectl config set-context jochen --user=jochen --server=kubernetes 
+```
+
+## Step 7: Use and test the new context 
+
+```
+kubectl config use-context jochen
+kubectl cluster-info 
+```
 
 ## Ref:
 
