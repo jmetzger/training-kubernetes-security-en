@@ -4,7 +4,7 @@
 
 ```
 cd
-mkdir certs
+mkdir -p certs
 # create your private key 
 openssl genrsa -out ~/certs/jochen.key 4096
 ```
