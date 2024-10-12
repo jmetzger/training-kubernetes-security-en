@@ -32,7 +32,7 @@ extendedKeyUsage=serverAuth,clientAuth
 ```
 # Create Certificate Signing Request
 openssl req -config ~/certs/jochen.csr.cnf -new -key ~/certs/jochen.key -nodes -out ~/certs/jochen.csr
-openssl req -in certs/laurent.csr --noout -text
+openssl req -in certs/jochen.csr --noout -text
 ```
 
 
