@@ -46,7 +46,8 @@ cat ~/certs/jochen.csr | base64 | tr -d '\n'
 ```
 nano jochen-csr.yaml
 ```
----
+
+```
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
 metadata:
@@ -62,7 +63,7 @@ spec:
 
 ```
 kubectl apply -f jochen-csr.yaml 
-
+```
 
 
 ## Ref:
