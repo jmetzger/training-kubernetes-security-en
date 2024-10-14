@@ -53,7 +53,7 @@ kubectl apply -f .
 ## Step 2: Create constraint 
 
   * it is like an instance (in code = usage of classes, can be created multiple times
-  * 
+  * the match defines, when it triggers -> when it calls the constraintTemplate for validation 
 
 ```
 nano 02-constraint.yaml
