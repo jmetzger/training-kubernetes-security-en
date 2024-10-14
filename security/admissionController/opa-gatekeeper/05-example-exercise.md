@@ -7,7 +7,7 @@
 
 ```
 cd 
-mkdir manifests 
+mkdir -p manifests 
 cd manifests 
 mkdir restrict-node-port 
 cd restrict-node-port 
