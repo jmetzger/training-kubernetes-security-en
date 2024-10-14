@@ -70,3 +70,31 @@ spec:
 ```
 kubectl apply -f .
 ```
+
+## Step 2: Create Constraint
+
+```
+nano 02-constraint.yaml 
+```
+
+```
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sExternalDataCosign
+metadata:
+  name: cosign-gatekeeper-provider
+spec:
+  enforcementAction: deny
+  match:
+    namespaces:
+      - app1
+      - app2
+      - app2
+    kinds:
+      - apiGroups: ["apps",""]
+        kinds: ["Deployment","Pod","StatefulSet","DaemonSet"]
+```
+
+```
+kubectl apply -f .
+```
+
