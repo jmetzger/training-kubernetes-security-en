@@ -75,3 +75,29 @@ spec:
 kubectl apply -f . 
 ```
 
+## Step 3: Test constraint with Service 
+
+```
+nano 03-service.yaml 
+```
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service-disallowed
+spec:
+  type: NodePort
+  ports:
+    - port: 80
+```
+
+```
+kubectl apply -f .
+```
+
+```
+Error from server (Forbidden): error when creating "03-service.yaml":
+admission webhook "validation.gatekeeper.sh" denied the request:
+[block-node-port] User is not allowed to create service of type NodePort
+```
