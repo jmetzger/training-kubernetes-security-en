@@ -47,5 +47,45 @@ kubect logs nginx-unpriv
   * Downside: We cannot start a debug-container with root-prviliges because runAsNonRoot on spec.pod.securityContext  -> level 
 
 
+## Step 3: Try to debug (does not work)
+
+```
+kubectl debug --it nginx-unpriv --image=alpine:1.20 
+# cannot be start because of runNonRoot - Restrictions 
+```
+
+## Step 4: Prepare non-root - image for debugging (if necessary) 
+
+```
+# We have created an alpine image running as USER 1001
+# vi Dockerfile
+FROM alpine:1.20
+USER 1001:1001
+```
+
+```
+# ALREADY DONE FOR YOU
+# And build an uploaded it to dockertrainereu (public)
+docker build -t dockertrainereu/alpine-rootless:1.20 .
+docker login
+docker push dockertrainereu/alpine-rootless 
+```
+
+
+## Step 5: Use that new image (alpine-rootless) for debugging
+
+```
+kubectl debug -it nginx-unpriv --image=dockertrainereu/alpine-root
+# you cannot ping of course. that is because of the nature, how ping is implemented in alpine -> busybox
+```
+
+```
+# in container
+id
+ip a
+wget -O - http://www.google.de 
+```
+
 
 * Reference: https://github.com/bitnami/containers/blob/main/bitnami/nginx/1.27/debian-12/Dockerfile
+
