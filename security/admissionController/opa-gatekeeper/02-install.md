@@ -4,7 +4,25 @@
 
 ```
 helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
-helm install gatekeeper/gatekeeper --name-template=gatekeeper --namespace gatekeeper-system --create-namespace
+
+cd
+mkdir -p manifests 
+cd manifests 
+mkdir gatekeeper
+```
+
+```
+nano values.yaml
+```
+
+```
+# we need this for a later exercise
+enableExternalData: true
+```
+
+
+```
+helm upgrade gatekeeper/gatekeeper --install --name-template=gatekeeper --namespace gatekeeper-system --create-namespace
 ```
 
 ## Step 2: Webhooks (lookaround)
