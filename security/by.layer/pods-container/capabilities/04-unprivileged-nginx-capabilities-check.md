@@ -36,8 +36,15 @@ spec:
 
 ```
 kubectl apply -f .
+kubectl get pods
+kubect logs nginx-unpriv 
 ```
 
+## Step 2: Conclusion 
+
+  * It runs without any capabilities
+  * It also runs as non-root
+  * Downside: We cannot start a debug-container with root-prviliges because runAsNonRoot on spec.pod.securityContext  -> level 
 
 
 
