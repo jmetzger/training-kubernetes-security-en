@@ -9,7 +9,9 @@ cd
 mkdir -p manifests 
 cd manifests 
 mkdir gatekeeper
+cd gatekeeper
 ```
+
 
 ```
 nano values.yaml
