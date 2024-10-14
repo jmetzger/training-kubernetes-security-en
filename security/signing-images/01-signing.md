@@ -1,4 +1,4 @@
-# Signing
+# Phase 1: Signing image
 
 ## Overview
 
@@ -36,12 +36,6 @@ cosign sign -y --key cosign.key dockertrainereu/alpine-rootless:1.20
 ```
 cosign verify --key cosign.pub dockertrainereu/alpine-rootless:1.21
 ```
-
-
-
-
-
-
 
 ## Reference:
 
