@@ -1,6 +1,6 @@
 # Example Exercise 
 
-## Step 1: Create contraintTemplate 
+## Step 1: Create constraintTemplate 
 
   * I took this from the library: https://open-policy-agent.github.io/gatekeeper-library/website/
   * https://open-policy-agent.github.io/gatekeeper-library/website/validation/block-nodeport-services/
