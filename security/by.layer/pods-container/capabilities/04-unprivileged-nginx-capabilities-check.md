@@ -20,14 +20,15 @@ kind: Pod
 metadata:
   name: nginx-unpriv
 spec:
-  allowPrivilegeEscalation: false
-  runAsNonRoot: true 
+  securityContext:
+    runAsNonRoot: true 
   containers:
     - name: podmagic
       image: bitnami/nginx:1.27
       command: [ "sleep" ]
       args: [ "infinity" ]
       securityContext:
+        allowPrivilegeEscalation: true 
         capabilities:
           drop:
           - all
