@@ -98,3 +98,8 @@ spec:
 kubectl apply -f .
 ```
 
+## Step 3: External Provider
+
+```
+git clone ```
+
