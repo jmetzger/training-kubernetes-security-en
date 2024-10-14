@@ -49,3 +49,29 @@ spec:
 ```
 kubectl apply -f .
 ```
+
+## Step 2: Create constraint 
+
+  * it is like an instance (in code = usage of classes, can be created multiple times
+  * 
+
+```
+nano 02-constraint.yaml
+```
+
+```
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sBlockNodePort
+metadata:
+  name: block-node-port
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Service"]
+```
+
+```
+kubectl apply -f . 
+```
+
