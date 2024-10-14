@@ -31,11 +31,4 @@ kubectl get mutationgwebhookconfigurations gatekeeper-mutatiing-webhook-configur
 # audit is done every 60 seconds in the audit-pod 
 kubectl -n gatekeeper-system get all
 ```
-   
-## Step 4: Install the libraries 
-
-  * The libraries are rego rules build by the community
-
-
-
-## Step 5:  
+     
