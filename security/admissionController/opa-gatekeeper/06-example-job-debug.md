@@ -110,7 +110,7 @@ kubectl apply -f .
 ```
 kubectl create sa podjob
 kubectl create rolebinding podjob-binding --clusterrole=cluster-admin --serviceaccount=default:podjob
-kubectl run -it --rm jobmaker --image=alpine --overrides='{"spec": {"service-account": "podjob"}}' -- sh
+kubectl run -it --rm jobmaker --image=alpine --overrides='{"spec": {"serviceAccount": "podjob"}}' -- sh
 ```
 
 ```
