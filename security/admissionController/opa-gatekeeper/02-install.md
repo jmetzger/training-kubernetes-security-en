@@ -24,7 +24,7 @@ enableExternalData: true
 
 
 ```
-helm upgrade gatekeeper/gatekeeper --install --name-template=gatekeeper --namespace gatekeeper-system --create-namespace
+helm upgrade gatekeeper/gatekeeper --install --name-template=gatekeeper --namespace gatekeeper-system --create-namespace -f values.yaml
 ```
 
 ## Step 2: Webhooks (lookaround)
