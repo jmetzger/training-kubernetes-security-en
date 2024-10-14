@@ -19,14 +19,23 @@ dpkg -i cosign*
 exit
 ```
 
-## Step 2: create private-key 
+## Step 2: create key-pair 
 
 ```
-
+cosign generate-key-pair
 ```
 
-# signing dockertrainereu/alpine-rootless:1.20 (only by trainer) 
+## Step 3: signing dockertrainereu/alpine-rootless:1.20 (only by trainer) 
 
+```
+cosign sign -y --key cosign.key dockertrainereu/alpine-rootless:1.20
+```
+
+## Step 4: Verify signature 
+
+```
+cosign verify --key cosign.pub dockertrainereu/alpine-rootless:1.21
+```
 
 
 
