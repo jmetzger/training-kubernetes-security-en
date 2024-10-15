@@ -22,9 +22,6 @@ metadata:
 spec:
   containers:
     - name: web
-      command:
-         - sleep
-         - infinity 
       image: bitnami/nginx 
       securityContext:
         capabilities:
@@ -54,6 +51,9 @@ metadata:
 spec:
   containers:
     - name: web
+      command:
+        - sleep
+        - infinity 
       image: alpine 
       securityContext:
         capabilities:
