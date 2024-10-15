@@ -73,6 +73,8 @@ spec:
 ```
 kubectl apply -f jochen-csr.yaml
 kubectl get -f jochen-csr.yaml
+# show me the current state -> pending
+kubectl describe -f jochen-csr.yaml
 ```
 
 ## Step 4: approve signing request
