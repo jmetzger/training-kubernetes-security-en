@@ -16,3 +16,4 @@
 
   * https://artifacthub.io/packages/helm/connaisseur/connaisseur
   * https://sse-secure-systems.github.io/connaisseur/v3.3.1/
+  * https://sysdig.com/blog/secure-kubernetes-deployment-signature-verification/
