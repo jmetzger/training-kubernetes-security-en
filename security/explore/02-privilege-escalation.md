@@ -86,6 +86,10 @@ id
 id
 ```
 
+```
+kubectl delete -f .
+```
+
 ## Step 3: Running pod without allowPrivilegeEscalation  
 
 ```
@@ -115,6 +119,11 @@ id
 ./escalate 
 id
 ```
+
+```
+kubectl delete -f .
+```
+
 
 ## Step 4: What about: runAsNonroot 
 
