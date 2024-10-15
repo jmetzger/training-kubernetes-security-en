@@ -108,7 +108,7 @@ kubectl config set-credentials jochen --client-certificate=jochen.crt --client-k
 
 ```
 # add a new context
-kubectl config set-context jochen --user=jochen --server=kubernetes 
+kubectl config set-context jochen --user=jochen --cluster=kubernetes 
 ```
 
 ## Step 7: Use and test the new context 
