@@ -89,3 +89,28 @@ wget -O - http://www.google.de
 
 * Reference: https://github.com/bitnami/containers/blob/main/bitnami/nginx/1.27/debian-12/Dockerfile
 
+
+## Step 6: Use image to ping 
+
+```
+# just for information. This was created like so
+# vi Dockerfile
+FROM debian
+RUN apt update -y && apt install -y iputils-ping && apt clean -y
+USER 1001
+```
+
+```
+# Let it run, start the game 
+kubectl run -it debug nginx-unpriv --image=dockertrainereu/pinger-rootless
+```
+
+
+```
+# in container
+ping www.google.de
+cat /proc/1/status | grep -i cap
+# take the line with data
+# now you can see the set capabilities 
+capsh --decode=00000000a80435fb
+```
