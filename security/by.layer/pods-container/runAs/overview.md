@@ -38,9 +38,7 @@ spec:
   securityContext:
     runAsUser: 1001
   containers:
-  - args:
-    - nginxuser
-    image: nginx:1.23
+  - image: nginx:1.23
     name: pod
     resources: {}
   dnsPolicy: ClusterFirst
