@@ -4,6 +4,7 @@
 
 ```
 kubectl create rolebinding developers --role=view --group=developers
+```
 
 ## Step 1: on your client: create private certificate
 
