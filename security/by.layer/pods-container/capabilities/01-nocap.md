@@ -22,6 +22,9 @@ metadata:
 spec:
   containers:
     - name: web
+      command:
+         - sleep
+         - infinity 
       image: bitnami/nginx 
       securityContext:
         capabilities:
