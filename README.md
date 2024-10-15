@@ -44,6 +44,7 @@
     * [kubeconfig decode certificate](kubernetes/rbac/decode-local-certificate.md)
     * [kubectl check your permission - can-i](kubernetes/rbac/can-i.md)
     * [use kubectl in pod - default service account](/kubernetes/rbac/pod-automount-sa.md)
+    * [create user for kubeconfig with using certificate](kubernetes/rbac/create-kubeconfig-with-cert.md)
     * An welchen Stelle spielt RBAC in Kubenetes eine Rolle ?
     * Komponenten / Objekte von RBAC
     * [practical exercise rbac](kubernetes/rbac-create-user-kubernetes-1-25.md)
