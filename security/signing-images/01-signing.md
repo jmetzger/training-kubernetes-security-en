@@ -7,7 +7,7 @@
 
 Important: We need access to the registry.
 
-## Step 1: Preparation: Install coosign on the client. 
+## Step 1: Preparation: Install cosign on the client. 
 
  * DONE BY THE TRAINER already 
 
