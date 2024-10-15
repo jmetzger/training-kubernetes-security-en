@@ -8,7 +8,7 @@
 
   * Tear capabilities down to Drop: all and set up those, that you need
 
-## As little capabilities are possible. 
+## As little capabilities as possible. 
 
   * Use as little capabilities as possible in your pod/cont
 
