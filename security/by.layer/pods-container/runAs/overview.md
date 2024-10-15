@@ -33,7 +33,7 @@ metadata:
   creationTimestamp: null
   labels:
     run: pod
-  name: pod
+  name: nginxrun
 spec:
   securityContext:
     runAsUser: 1001
@@ -46,6 +46,9 @@ spec:
   dnsPolicy: ClusterFirst
   restartPolicy: Always
 ```
+
+```
+kubectl apply -f 01-pod.yaml
 
 
 ## runAsGroup 
