@@ -2,7 +2,7 @@
 
 ## What are these ? 
 
-  * Capabilities allow us execute stuff, that normally only the root user can do.
+  * Capabilities allow us to execute stuff, that normally only the root user can do.
 
 ## Best practice for security and container/pods 
 
