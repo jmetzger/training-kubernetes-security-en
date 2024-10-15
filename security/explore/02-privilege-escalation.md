@@ -57,6 +57,16 @@ docker push dockertrainereu/escalate
 
 ## Step 2: Running pod with allowPrivilegeEscalation  
 
+```
+mkdir -p manifests
+cd manifests
+mkdir escalate-pod
+cd escalate-pod
+```
+
+```
+nano 01-pod.yaml
+```
 
 ```
 apiVersion: v1
@@ -93,6 +103,10 @@ kubectl delete -f .
 ## Step 3: Running pod without allowPrivilegeEscalation  
 
 ```
+nano 01-pod.yaml
+```
+
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -126,6 +140,10 @@ kubectl delete -f .
 
 
 ## Step 4: What about: runAsNonroot 
+
+```
+nano 01-pod.yaml
+```
 
 ```
 apiVersion: v1
