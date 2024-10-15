@@ -55,7 +55,7 @@ docker build . -t dockertrainereu/escalate
 docker push dockertrainereu/escalate 
 ```
 
-# Step 2: Running pod with allowPrivilegeEscalation  
+## Step 2: Running pod with allowPrivilegeEscalation  
 
 
 ```
@@ -65,8 +65,8 @@ metadata:
   name: escalate
 spec:
   securityContext:
-    runAsUser: 1000
-    runAsGroup: 1000
+    runAsUser: 10001
+    runAsGroup: 10001
   containers:
   - name: escalate
     image: dockertrainereu/escalate 
@@ -86,8 +86,7 @@ id
 id
 ```
 
-# Step 2: Running pod with allowEscalation  
-
+## Step 3: Running pod without allowPrivilegeEscalation  
 
 ```
 apiVersion: v1
@@ -96,8 +95,8 @@ metadata:
   name: escalate
 spec:
   securityContext:
-    runAsUser: 1000
-    runAsGroup: 1000
+    runAsUser: 10001
+    runAsGroup: 10001
   containers:
   - name: escalate
     image: dockertrainereu/escalate 
@@ -117,10 +116,7 @@ id
 id
 ```
 
-## Step 3: What about: runAsNonroot 
-
-# Step 2: Running pod with allowEscalation  
-
+## Step 4: What about: runAsNonroot 
 
 ```
 apiVersion: v1
@@ -129,8 +125,8 @@ metadata:
   name: escalate
 spec:
   securityContext:
-    runAsUser: 1000
-    runAsGroup: 1000
+    runAsUser: 10001
+    runAsGroup: 10001
     runAsNonRoot: true 
   containers:
   - name: escalate
