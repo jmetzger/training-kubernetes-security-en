@@ -68,10 +68,10 @@
     * Wie debugge ich non-root - Container/Pods?
     * Praktische Verwendung eins non-root pod
 
- 1. Der Security Context
+ 1. The Security Context
     * Was ist der SecurityContext?
     * seccomp
-    * Linux capabilities
+    * [Linux capabilities - overview](/security/by.layer/pods-container/capabilities/00-overview.md)
     * privileged/unprivileged
     * appArmor / SELinux
      
