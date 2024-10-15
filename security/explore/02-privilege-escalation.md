@@ -55,7 +55,7 @@ docker build . -t dockertrainereu/escalate
 docker push dockertrainereu/escalate 
 ```
 
-# Step 2: Running pod with allowEscalation  
+# Step 2: Running pod with allowPrivilegeEscalation  
 
 
 ```
