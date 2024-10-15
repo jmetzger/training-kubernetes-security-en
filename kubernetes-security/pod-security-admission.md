@@ -25,8 +25,8 @@ nano 01-ns.yml
 ```
 
 ```
-# Schritt 1: Namespace anlegen 
-# vi 01-ns.yml 
+# Step 1: create namespace  
+
 
 apiVersion: v1
 kind: Namespace
