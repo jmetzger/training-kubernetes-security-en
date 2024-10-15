@@ -57,6 +57,9 @@ cat /proc/1/status | grep -i CAP
 ```
 
 
+![image](https://github.com/user-attachments/assets/75ecc103-bbad-4e09-ab6f-ddecfa8e8292)
+
+
 ## Step 2: add cap-net-raw (in pod manifest it is NET_RAW)
 
   * now enable cap_net_raw (net_raw) in manifest
@@ -97,7 +100,7 @@ ping www.google.de
 cat /proc/1/status | grep -i CAP
 ```
 
-![image](https://github.com/user-attachments/assets/75ecc103-bbad-4e09-ab6f-ddecfa8e8292)
+![image](https://github.com/user-attachments/assets/605fa0ae-8c90-42d8-8535-2b691a3e25f5)
 
 ## Ref:
 
