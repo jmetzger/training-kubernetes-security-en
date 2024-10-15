@@ -83,6 +83,9 @@ kubectl describe -f jochen-csr.yaml
 kubectl certificate approve jochen-authentication
 # or:
 kubectl certificate approve -f jochen-csr.yaml
+
+# see, that it is approved
+kubectl describe -f jochen-csr.yaml 
 ```
 
 ## Step 5: get the approved certificate to be used
