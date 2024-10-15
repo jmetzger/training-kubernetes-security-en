@@ -3,18 +3,18 @@
 
 ## Seit: 1.2.22 Pod Security Admission 
 
-  * 1.2.22 - ALpha - D.h. ist noch nicht aktiviert und muss als Feature Gate aktiviert (Kind)
-  * 1.2.23 - Beta -> d.h. evtl. aktiviert  
+  * 1.2.22 - Alpha Feature, was not activated by default. need to activate it as feature gate (Kind)
+  * 1.2.23 - Beta -> probably   
 
-## Vorgefertigte Regelwerke 
+## Predefined settings
 
-  * privileges - keinerlei Einschränkungen 
-  * baseline - einige Einschränkungen 
-  * restricted - sehr streng 
+  * privileges - no restrictions  
+  * baseline - some restriction 
+  * restricted - really restrictive 
 
   * Reference: https://kubernetes.io/docs/concepts/security/pod-security-standards/
 
-## Praktisches Beispiel für Version ab 1.2.23 - Problemstellung 
+##  Practical Example starting from Kubernetes 1.23  
 
 ```
 mkdir -p manifests
