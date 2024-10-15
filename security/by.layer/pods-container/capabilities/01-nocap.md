@@ -1,6 +1,7 @@
 # Start pod without capabilities 
 
 ```
+cd
 mkdir -p manifests
 cd manifests
 mkdir -p nocap
