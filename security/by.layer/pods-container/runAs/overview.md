@@ -12,7 +12,7 @@
   * Recommended to set it, that will be deep defense line
     * If image has a root user or can not run as root this will fail 
 
-## Execrcise 
+## Exercise 1 
 
 ```
 cd
@@ -51,6 +51,45 @@ kubectl describe pod nginxrun
 kubectl logs nginxrun 
 ```
 
+## Exercise 2: (works) 
+
+```
+cd
+mkdir -p manifests
+cd manifests
+mkdir run2
+cd run2
+```
+
+```
+nano 01-pod.yaml
+```
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alpinerun
+spec:
+  securityContext:
+    runAsUser: 1001
+  containers:
+  - image: alpine
+    command:
+      - sleep
+      - infinity 
+    name: pod
+```
+
+```
+kubectl apply -f .
+kubectl describe pod alpinerun
+kubectl exec -it alpinerun -- sh
+```
+
+```
+id
+```
 
 ## runAsGroup 
 
