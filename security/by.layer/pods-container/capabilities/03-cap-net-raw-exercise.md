@@ -1,5 +1,13 @@
 # Testing cap new raw 
 
+## Step 0: by trainer. create the image 
+
+```
+# Dockerfile 
+FROM debian
+RUN apt update -y && apt install -y iputils-ping && apt clean -y
+```
+
 ## Step 1: Using dockertrainereu/pinger image 
 
   * debian with ping inside 
