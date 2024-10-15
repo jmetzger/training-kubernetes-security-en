@@ -36,7 +36,7 @@ metadata:
   name: nginxrun
 spec:
   securityContext:
-    runAsUser: 1001
+    runAsUser: 10001
   containers:
   - image: nginx:1.23
     name: pod
@@ -72,7 +72,7 @@ metadata:
   name: alpinerun
 spec:
   securityContext:
-    runAsUser: 1001
+    runAsUser: 10001
   containers:
   - image: alpine
     command:
