@@ -89,6 +89,8 @@ kubectl exec -it alpinerun -- sh
 
 ```
 id
+cd /proc/1/ns
+ls -la
 ```
 
 ## runAsGroup 
