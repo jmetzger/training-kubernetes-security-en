@@ -1,6 +1,6 @@
 # Why is the capability cap_net_raw dangerous ?
 
-## Recoommendation: Do not add CAP_NET_RAW to the capabilities of your container
+## Recommendation: Do not add CAP_NET_RAW to the capabilities of your container
 
    * only reason: you really need ping
    * but you can still use a debug container with ping and the capabilities
