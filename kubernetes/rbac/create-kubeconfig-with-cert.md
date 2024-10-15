@@ -53,7 +53,7 @@ cat ~/certs/jochen.csr | base64 | tr -d '\n'
 
 ```
 cd certs
-jochen-csr.yaml
+nano jochen-csr.yaml
 ```
 
 ```
