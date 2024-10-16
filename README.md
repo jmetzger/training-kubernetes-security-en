@@ -53,6 +53,7 @@
     * [OPA Gatekeeper 01-Overview](/security/admissionController/opa-gatekeeper/01-overview.md)
     * [OPA Gatekeeper 02-Install with Helm](/security/admissionController/opa-gatekeeper/02-install.md)
     * [OPA Gatekeeper 03-Simple Exercise](/security/admissionController/opa-gatekeeper/05-example-exercise.md)
+    * [OPA Gatekeeper 04-Example-Job-Debug](/security/admissionController/opa-gatekeeper/06-example-job-debug.md)
    
  1. Pod Security
     * [Automount ServiceAccounts or not ?](security/by.layer/pods-container/serviceAccount/do-not-mount-if-not-needed.md)
