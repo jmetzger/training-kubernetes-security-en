@@ -22,7 +22,7 @@
  1. Category 2 by Layer: Cluster
     * [Securing the components]()
     * [Securing kubelet](security/cluster/components/kubelet.md)
-    * [Least Privileges with RBAC]()
+    * [Least Privileges with RBAC](kubernetes/rbac/00-rbac-and-least-privileges.md)
     * [Admission Controller](/security/admissionController/01-overview.md)
    
  1. Category 3 by Layer: Pods Container
