@@ -54,6 +54,7 @@
     * [OPA Gatekeeper 02-Install with Helm](/security/admissionController/opa-gatekeeper/02-install.md)
     * [OPA Gatekeeper 03-Simple Exercise](/security/admissionController/opa-gatekeeper/05-example-exercise.md)
     * [OPA Gatekeeper 04-Example-Job-Debug](/security/admissionController/opa-gatekeeper/06-example-job-debug.md)
+    * [Connaisseur: Verifying images before Deployment](/security/admissionController/connaisseur-image-verification/02-walkthrough.md)
    
  1. Pod Security
     * [Automount ServiceAccounts or not ?](security/by.layer/pods-container/serviceAccount/do-not-mount-if-not-needed.md)
