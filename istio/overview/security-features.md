@@ -1,22 +1,14 @@
 # What security features does istio offer ? 
 
-## Pod-2-Pod Encryption (mtls)
+## Overview 
 
-  * mtls (mutual tls)
+![image](https://github.com/user-attachments/assets/c31b0e10-bdb9-43e1-a162-274711079e94)
 
-## Authorization Policies 
+## Security needs of microservices 
 
-  * How is allowed to connect to which service
+![image](https://github.com/user-attachments/assets/35092c36-ffd8-428b-bf71-b60ff3749fb7)
 
-```
-apiVersion: security.istio.io/v1
-kind: AuthorizationPolicy
-metadata:
-  name: foo
-spec:
-  action: ALLOW
-  rules:
-  - to:
-    - operation:
-        paths: ["/public"]
-```
+## Implementation of security 
+
+![image](https://github.com/user-attachments/assets/2fce84cf-4483-4772-aabf-c27d099e303e)
+
