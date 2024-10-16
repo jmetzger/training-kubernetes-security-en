@@ -48,7 +48,7 @@
 
  1. Obey Security Policies 
     * [Admission Controller](/security/admissionController/01-overview.md)
-    * PSA (PodSecurity Adminssion)
+    * PSA (PodSecurity Admission)
     * Exercise with PSA
    
  1. Pod Security
