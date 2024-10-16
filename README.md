@@ -43,7 +43,7 @@
     * [use kubectl in pod - default service account](/kubernetes/rbac/pod-automount-sa.md)
     * [create user for kubeconfig with using certificate](kubernetes/rbac/create-kubeconfig-with-cert.md)
     * Where does RBAC play a role ?
-    * Komponenten / Objekte von RBAC
+    * Components / moving parts of RBAC
     * [practical exercise rbac](kubernetes/rbac-create-user-kubernetes-1-25.md)
 
  1. Obey Security Policies 
@@ -51,18 +51,14 @@
     * PSA (PodSecurity Adminssion)
     * Exercise with PSA
    
- 1. Pod Sicherheit
-    * ServiceAccounts (automount) mounten oder nicht?
-    * Muss jeder Pod auf den Kuberentes Api - Server zugreifen können?
-    * Sicherheitskritische Themen in Bezug auf Pods
-
+ 1. Pod Security
+    * Automount ServiceAccounts or not ? 
+    * Does every pod need to access the kubenernetes api server?
+   
  1. Unprivilegierte Pods/Container
-    * Was ist zu beachten?
-    * Welche Images setze ich ein?
-    * Wie kann ich Probleme lösen?
-    * Wie debugge ich non-root - Container/Pods?
-    * Praktische Verwendung eins non-root pod
-
+    * Which images to use ? 
+    * How can i debug non-root - Container/Pods?
+    
  1. The SecurityContext
     * seccomp
     * privileged/unprivileged
