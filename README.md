@@ -66,7 +66,7 @@
      
  1. Network Policies
     * Understand NetworkPolicies
-    * Exercise NetworkPolicies
+    * [Exercise NetworkPolicies](kubernetes-networkpolicy/00-simple-exercises-group-en.md)
 
  1. ServiceMesh
     * Why a ServiceMesh ?
