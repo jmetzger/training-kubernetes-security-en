@@ -78,6 +78,7 @@
     * [How does a ServiceMeshs work? (example istio](/istio/overview/overview-classic-sidecar.md)
     * [istio security features](istio/overview/security-features.md)
     * [istio-service mesh - ambient mode](/istio/overview/ambient-mode.md)
+    * [Performance comparison - baseline,sidecar,ambient](/istio/overview/performance-comparison-baseline-sidecar-ambient.md)
      
  1. Image Security
     * When to scan ?
