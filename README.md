@@ -75,8 +75,11 @@
     * [istio-service mesh - ambient mode](/istio/overview/ambient-mode.md)
      
  1. Image Security
+    * When to scan ?
     * Image Security Scanning
 
  1. Documentation
     * [Great video about attacking kubernetes - older, but some stuff is still applicable](https://www.youtube.com/watch?v=HmoVSmTIOxM)
+    * [Straight forward hacking session of kubernetes](https://youtu.be/iD_klswHJQs?si=97rWNuAbGjLwCjpa)
+    * [github with manifests for creating bad pods](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation#pod8)
 
