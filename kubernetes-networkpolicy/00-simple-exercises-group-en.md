@@ -138,15 +138,15 @@ spec:
 ```
 
 ```
-kubectl -n policy-demo-$KURZ apply -f . 
+kubectl -n policy-demo-$SHORT apply -f . 
 ```
 
-## Schritt 5: Testen (zugriff sollte funktionieren)
+## Schritt 5: Test it (access should work)
 
 ```
-# lassen einen 2. pod laufen mit dem auf den nginx zugreifen 
-# pod hat durch run -> access automatisch das label run:access zugewiesen 
-kubectl run --namespace=policy-demo-$KURZ access --rm -ti --image busybox
+# Start a 2nd pod to access nginx 
+# becasue of run->access pod automtically has the label run:access
+kubectl run --namespace=policy-demo-$SHORT access --rm -ti --image busybox
 ```
 
 ```
@@ -155,10 +155,10 @@ wget -q nginx -O -
 ```
 
 
-## Schritt 6: Pod mit label run=no-access - da sollte es nicht gehen 
+## Step 6: start Pod with label run=no-access - this should not work 
 
 ``` 
-kubectl run --namespace=policy-demo-$KURZ no-access --rm -ti --image busybox
+kubectl run --namespace=policy-demo-$SHORT no-access --rm -ti --image busybox
 ```
 
 ```
@@ -166,10 +166,10 @@ kubectl run --namespace=policy-demo-$KURZ no-access --rm -ti --image busybox
 wget -q nginx -O -
 ```
 
-## Schritt 7: Aufräumen 
+## Step 7: Cleanup
 
 ```
-kubectl delete ns policy-demo-$KURZ 
+kubectl delete ns policy-demo-$SHORT 
 ```
 
 
