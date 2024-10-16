@@ -50,7 +50,3 @@ spec:
       value: "65536"
 ```
 
-
-## Reference:
-
-  * 
