@@ -4,7 +4,7 @@
 
   * You must have create a private/public key pair
   * You must have signed some images in your registry on docker Hub.
-  * This was done here: [Signing an image with cosign](security/signing-images/01-signing.md)
+  * This was done here: [Signing an image with cosign](/security/signing-images/01-signing.md)
     
 
 ## Step 1: Install Connaissuer with helm 
