@@ -71,6 +71,7 @@
  1. ServiceMesh
     * Why a ServiceMesh ?
     * How does a ServiceMeshs work?
+    * [istio security features](istio/overview/security-features.md)
     * [istio-service mesh - ambient mode](/istio/overview/ambient-mode.md)
      
  1. Image Security
