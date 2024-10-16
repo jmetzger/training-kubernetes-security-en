@@ -46,7 +46,7 @@
     * Components / moving parts of RBAC
     * [practical exercise rbac](kubernetes/rbac-create-user-kubernetes-1-25.md)
 
- 1. Obey Security Policies 
+ 1. Obey Security Policies (AdmissionControllers)
     * [Admission Controller](/security/admissionController/01-overview.md)
     * PSA (PodSecurity Admission)
     * [Exercise with PSA](kubernetes-security/pod-security-admission.md)
