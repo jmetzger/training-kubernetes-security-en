@@ -38,11 +38,11 @@
 
  1. RBAC
     * [How does RBAC work ?](kubernetes/rbac/01-how-does-rbac-work.md)
+    * [Where does RBAC play a role ?](kubernetes/rbac/02-where-does-rbac-play-a-role.md)
     * [kubeconfig decode certificate](kubernetes/rbac/decode-local-certificate.md)
     * [kubectl check your permission - can-i](kubernetes/rbac/can-i.md)
     * [use kubectl in pod - default service account](/kubernetes/rbac/pod-automount-sa.md)
     * [create user for kubeconfig with using certificate](kubernetes/rbac/create-kubeconfig-with-cert.md)
-    * Where does RBAC play a role ?
     * Components / moving parts of RBAC
     * [practical exercise rbac](kubernetes/rbac-create-user-kubernetes-1-25.md)
 
