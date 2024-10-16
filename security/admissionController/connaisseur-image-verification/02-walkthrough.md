@@ -1,4 +1,4 @@
-# Walkthrough 
+# Verifying images before using them in Deployment (admissionController)
 
 ## Prerequisites
 
