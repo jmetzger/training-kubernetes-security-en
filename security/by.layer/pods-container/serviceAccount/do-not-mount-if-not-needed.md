@@ -10,5 +10,5 @@
 
 ```
 # enabled by default 
-kubectl explain pod.spec.automountServiceToken
+kubectl explain pod.spec.automountServiceAccountToken
 ```
