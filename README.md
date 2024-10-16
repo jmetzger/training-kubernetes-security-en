@@ -50,7 +50,9 @@
     * [Admission Controller](/security/admissionController/01-overview.md)
     * PSA (PodSecurity Admission)
     * [Exercise with PSA](kubernetes-security/pod-security-admission.md)
-    * [OPA Gatekeeper Overview](/security/admissionController/opa-gatekeeper/01-overview.md)
+    * [OPA Gatekeeper 01-Overview](/security/admissionController/opa-gatekeeper/01-overview.md)
+    * [OPA Gatekeeper 02-Install with Helm](/security/admissionController/opa-gatekeeper/02-install.md)
+    * [OPA Gatekeeper 03-Simple Exercise](/security/admissionController/opa-gatekeeper/05-example-exercise.md)
    
  1. Pod Security
     * Automount ServiceAccounts or not ? 
