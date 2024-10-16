@@ -49,7 +49,7 @@
  1. Obey Security Policies 
     * [Admission Controller](/security/admissionController/01-overview.md)
     * PSA (PodSecurity Admission)
-    * Exercise with PSA
+    * [Exercise with PSA](kubernetes-security/pod-security-admission.md)
    
  1. Pod Security
     * Automount ServiceAccounts or not ? 
