@@ -10,6 +10,9 @@
      * [AttackVectors](security/overview/attack-vectors.md)
      * [The route from development to production to secure](security/overview/route-2-production.md)
      * [Kill Chain](kill-chain.md)
+
+  1. Checklist
+     * [Security Checklists](/security/checklist/security-checklist.md)
    
   1. Getting hacked
      * [Why is a cluster so rewarding to hack](security/getting-hacked/kubernetes-rewarding.md)
