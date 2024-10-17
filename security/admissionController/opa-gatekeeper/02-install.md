@@ -21,7 +21,7 @@ kubectl get mutatingwebhookconfigurations gatekeeper-mutating-webhook-configurat
   * Let's look in the mutation more deeply 
 
 ```
-kubectl get mutationgwebhookconfigurations gatekeeper-mutatiing-webhook-configuration -o yaml
+kubectl get mutatingwebhookconfiguration gatekeeper-mutating-webhook-configuration -o yaml
 ```
 
 ## Step 3: The components 
