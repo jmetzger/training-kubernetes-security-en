@@ -12,4 +12,18 @@
   1. If we have vulnerabilities with HIGH-Score (CVE), the pipeline will fail (and it stops)
      * Image is not uploaded 
 
+## Trivy modes 
 
+  * Trivy can be used standalone or as client/server
+  * in our case, we will use it standalone 
+
+## Demonstration:
+
+  * https://gitlab.com/jmetzger/container-scanning-session
+
+
+## References: 
+
+  * https://bluelight.co/blog/how-to-set-up-trivy-scanner-in-gitlab-ci-guide
+  * https://gitlab.com/bluelightco/blog-examples/trivy
+  
