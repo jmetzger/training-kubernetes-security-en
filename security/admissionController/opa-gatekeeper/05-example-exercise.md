@@ -94,6 +94,8 @@ spec:
 
 ```
 kubectl apply -f .
+# should no appear 
+kubectl get svc my-service-disallowed
 ```
 
 ```
