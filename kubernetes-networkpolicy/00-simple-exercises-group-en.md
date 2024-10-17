@@ -64,7 +64,7 @@ spec:
 ```
 
 ```
-kubectl -n policy-demo-$HORT apply -f . 
+kubectl -n policy-demo-$SHORT apply -f . 
 ```
 
 ## Step 2: Testing access without any rules  
