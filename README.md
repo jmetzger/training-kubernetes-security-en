@@ -70,7 +70,8 @@
   1. The SecurityContext
      * seccomp
      * privileged/unprivileged
-     * appArmor / SELinux
+     * [appArmor example](https://kubernetes.io/docs/tutorials/security/apparmor/)
+     * SELinux
      
   1. Network Policies
      * Understand NetworkPolicies
