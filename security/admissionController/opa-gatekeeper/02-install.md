@@ -4,7 +4,7 @@
 
 ```
 helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
-helm upgrade gatekeeper/gatekeeper --install gatekeeper --namespace gatekeeper-system --create-namespace
+helm upgrade gatekeeper gatekeeper/gatekeeper --install  --namespace gatekeeper-system --create-namespace
 ```
 
 ## Step 2: Webhooks (lookaround)
