@@ -75,6 +75,7 @@
   1. Network Policies
      * Understand NetworkPolicies
      * [Exercise NetworkPolicies](kubernetes-networkpolicy/00-simple-exercises-group-en.md)
+     * [CNI Benchmarks](https://itnext.io/benchmark-results-of-kubernetes-network-plugins-cni-over-40gbit-s-network-2024-156f085a5e4e)
 
   1. ServiceMesh
      * [Why a ServiceMesh ?](istio/overview/benefits-of-a-service-mesh.md)
