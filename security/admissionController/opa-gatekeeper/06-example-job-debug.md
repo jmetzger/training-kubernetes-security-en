@@ -57,7 +57,6 @@ nano constraint.yaml
 ```
 
 ```
-cat 02-constraint.yaml
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sBlockJob
 metadata:
