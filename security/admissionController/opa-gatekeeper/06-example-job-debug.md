@@ -49,7 +49,7 @@ kubectl describe -f constraint-template.yaml
 ```
 
 
-## Step 2: Create contraint 
+## Step 2: Create constraint 
 
 ```
 nano constraint.yaml
