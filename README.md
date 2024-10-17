@@ -89,7 +89,7 @@
      * [Example Image Security Scanning - using gitlab and trivy](security/scanning-containers/02-example-trivy-gitlab.md)
 
   1. Hacking Sessions
-     [Hacking with HostPID](/explore/01-hack-session-hostpid.md)
+     * [Hacking with HostPID](/explore/01-hack-session-hostpid.md)
 
   1. Documentation
      * [Great video about attacking kubernetes - older, but some stuff is still applicable](https://www.youtube.com/watch?v=HmoVSmTIOxM)
