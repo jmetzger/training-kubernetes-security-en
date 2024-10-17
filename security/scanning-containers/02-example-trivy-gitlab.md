@@ -9,7 +9,7 @@
 ## What needs to be done ?
 
   1. We want to scan directly after building the image, but before pushing
-  1. If we have vulnerabilities with HIGH-Score (CVE), the pipeline will fail (and it stops)
+  1. If we have vulnerabilities with CRITICAL-Score (CVE), the pipeline will fail (and it stops)
      * Image is not uploaded 
 
 ## Trivy modes 
