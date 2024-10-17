@@ -4,7 +4,7 @@
 
  * Gitlab offers a security scanner based on Trivy
  * BUT: This scanner tests already uploading images
- * If we think about ShiftLeft-appraoch (Security early) on, this might not be the best approach
+ * If we think about ShiftLeft-approach (Security early) on, this might not be the best option
 
 ## What needs to be done ?
 
