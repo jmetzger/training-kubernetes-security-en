@@ -64,7 +64,7 @@ metadata:
   labels:
     svc: nginx
 spec:
-  type: ClusterIp
+  type: ClusterIP
   ports:
   - port: 80
     protocol: TCP
