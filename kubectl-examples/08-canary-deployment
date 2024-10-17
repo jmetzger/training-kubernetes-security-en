@@ -1,6 +1,6 @@
 # Exercise: AB-Deployment 
 
-## Walkthrough 
+## Phase 1: stable application (without canary)  
 
 ```
 cd
@@ -34,7 +34,7 @@ spec:
   selector:
     matchLabels:
       version: v1
-  replicas: 2
+  replicas: 20
   template:
     metadata:
       labels:
@@ -54,6 +54,36 @@ spec:
         configMap:
           name: nginx-version-1
 ```
+
+```
+# vi 05-svc.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx
+  labels:
+    svc: nginx
+spec:
+  type: ClusterIp
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: nginx
+```
+
+```
+kubectl apply -f .
+kubectl run -it --rm podtest --image=busybox 
+```
+
+```
+# wget -O - http://my-nginx.default.svc.cluster.local  
+while [ true ] do wget -O - http://my-nginx.default.svc.cluster.local; done  
+```
+
+
+
 
 ```
 # vi 03-cm-version2.yml 
@@ -101,22 +131,7 @@ spec:
           name: nginx-version-2
 ```
 
-```
-# vi 05-svc.yml 
-apiVersion: v1
-kind: Service
-metadata:
-  name: my-nginx
-  labels:
-    svc: nginx
-spec:
-  type: NodePort
-  ports:
-  - port: 80
-    protocol: TCP
-  selector:
-    app: nginx
-```
+
 
 ```
 kubectl apply -f . 
