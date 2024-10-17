@@ -34,7 +34,7 @@ cosign sign -y --key cosign.key dockertrainereu/alpine-rootless:1.20
 ## Step 4: Verify signature 
 
 ```
-cosign verify --key cosign.pub dockertrainereu/alpine-rootless:1.21
+cosign verify --key cosign.pub dockertrainereu/alpine-rootless:1.20
 ```
 
 ## Reference:
