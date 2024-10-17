@@ -7,7 +7,7 @@
   * This was done here: [Signing an image with cosign](/security/signing-images/01-signing.md)
     
 
-## Step 1: Install Connaissuer with helm 
+## Step 1: Install Connaisseur with helm 
 
 ```
 cd
