@@ -11,7 +11,7 @@ cd blockjob
 ```
 
 ```
-nano constraint-template.yaml
+nano 01-constraint-template.yaml
 ```
 
 ```
@@ -53,7 +53,7 @@ kubectl describe -f constraint-template.yaml
 ## Step 2: Create constraint 
 
 ```
-nano constraint.yaml
+nano 02-constraint.yaml
 ```
 
 ```
