@@ -101,7 +101,7 @@ helm upgrade connaisseur connaisseur/connaisseur --install --create-namespace --
 ```
 # create namespace
 kubectl create ns app1
-kubectl label ns app1 securesystemsengineering.connaisseur/xwebhook=validate
+kubectl label ns app1 securesystemsengineering.connaisseur/webhook=validate
 ```
 
 ## Step 3: Try to run image in namespace 
