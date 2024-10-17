@@ -46,7 +46,7 @@ spec:
 ```
 kubectl apply -f .
 # Was it sucessfully parsed and compiled ?
-kubectl describe -f constraint-template.yaml
+kubectl describe -f 01-constraint-template.yaml
 ```
 
 
