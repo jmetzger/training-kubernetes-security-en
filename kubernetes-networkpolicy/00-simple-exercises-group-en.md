@@ -115,7 +115,7 @@ kubectl run --namespace=policy-demo-$SHORT access --rm -ti --image busybox
 wget -q nginx -O -
 ```
 
-## Step 5: Allow access von pods mit dem Label run=access (alle mit run gestarteten pods mit namen access haben dieses label per default)
+## Step 5: Allow access vof pods with the Label run=access (all pods startet with run with the name access, do have this label by default)
 
 ```
 nano 04-access-nginx.yaml 
