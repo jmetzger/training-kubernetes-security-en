@@ -10,6 +10,9 @@
      * [AttackVectors](#attackvectors)
      * [The route from development to production to secure](#the-route-from-development-to-production-to-secure)
      * [Kill Chain](#kill-chain)
+
+  1. Checklist
+     * [Security Checklists](#security-checklists)
    
   1. Getting hacked
      * [Why is a cluster so rewarding to hack](#why-is-a-cluster-so-rewarding-to-hack)
@@ -31,6 +34,8 @@
      * [Overview capabilities](#overview-capabilities)
      * [Start pod without capabilities & how can we see this](#start-pod-without-capabilities--how-can-we-see-this)
      * [Hacking and exploration session HostPID](#hacking-and-exploration-session-hostpid)
+     * [Disable ServiceLinksEnable false](https://github.com/jmetzger/training-kubernetes-security-en/blob/main/security/by.layer/pods-container/enableServiceLinks/disable-howto-and-why.m)
+) 
      * [Great but still alpha User Namespaces](#great-but-still-alpha-user-namespaces)
     
   1. Reaction 
@@ -67,11 +72,13 @@
   1. The SecurityContext
      * seccomp
      * privileged/unprivileged
-     * appArmor / SELinux
+     * [appArmor example](https://kubernetes.io/docs/tutorials/security/apparmor/)
+     * SELinux
      
   1. Network Policies
      * Understand NetworkPolicies
      * [Exercise NetworkPolicies](#exercise-networkpolicies)
+     * [CNI Benchmarks](https://itnext.io/benchmark-results-of-kubernetes-network-plugins-cni-over-40gbit-s-network-2024-156f085a5e4e)
 
   1. ServiceMesh
      * [Why a ServiceMesh ?](#why-a-servicemesh-)
@@ -81,8 +88,14 @@
      * [Performance comparison - baseline,sidecar,ambient](#performance-comparison---baselinesidecarambient)
      
   1. Image Security
-     * When to scan ?
-     * Image Security Scanning
+     * [When to scan ?](#when-to-scan-)
+     * [Example Image Security Scanning - using gitlab and trivy](#example-image-security-scanning---using-gitlab-and-trivy)
+
+  1. Hacking Sessions
+     * [Hacking with HostPID](#hacking-with-hostpid)
+    
+  1. Extras
+     * [Canary deployment with basic kubernetes mechanisms ](#canary-deployment-with-basic-kubernetes-mechanisms-)
 
   1. Documentation
      * [Great video about attacking kubernetes - older, but some stuff is still applicable](https://www.youtube.com/watch?v=HmoVSmTIOxM)
@@ -254,6 +267,30 @@ its job is to download images and start containers
 
 ![image](https://github.com/user-attachments/assets/c8e8afda-77f3-4e93-92bc-d7f398872aab)
 (Source: techtag.de)
+
+## Checklist
+
+### Security Checklists
+
+
+### For containers/pods 
+
+```
+Containers should not be running as root.
+Containers are missing securityContext.
+RBAC Protect cluster-admin ClusterRoleBindings.
+Prohibit RBAC Wildcards for Verbs.
+Services should not be using NodePort.
+Containers should mount the root filesystem as read-only.
+Containers should not share hostIPC.
+Containers should not be using hostPort.
+Containers should not be mounting the Docker sockets.
+```
+
+### In general 
+
+  * https://github.com/krol3/kubernetes-security-checklist/
+
 
 ## Getting hacked
 
@@ -832,6 +869,10 @@ wget -O - http://www.google.de
 ```
 
 ### Hacking and exploration session HostPID
+
+### Disable ServiceLinksEnable false
+
+  * https://github.com/jmetzger/training-kubernetes-security-en/blob/main/security/by.layer/pods-container/enableServiceLinks/disable-howto-and-why.m
 
 ### Great but still alpha User Namespaces
 
@@ -1632,7 +1673,7 @@ kind: Constraint
 
 ```
 helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
-helm upgrade gatekeeper/gatekeeper --install gatekeeper --namespace gatekeeper-system --create-namespace
+helm upgrade gatekeeper gatekeeper/gatekeeper --install  --namespace gatekeeper-system --create-namespace
 ```
 
 ### Step 2: Webhooks (lookaround)
@@ -1649,7 +1690,7 @@ kubectl get mutatingwebhookconfigurations gatekeeper-mutating-webhook-configurat
   * Let's look in the mutation more deeply 
 
 ```
-kubectl get mutationgwebhookconfigurations gatekeeper-mutatiing-webhook-configuration -o yaml
+kubectl get mutatingwebhookconfiguration gatekeeper-mutating-webhook-configuration -o yaml
 ```
 
 ### Step 3: The components 
@@ -1716,7 +1757,7 @@ kubectl apply -f .
 
 ### Step 2: Create constraint 
 
-  * it is like an instance (in code = usage of classes, can be created multiple times
+  * it is like an instance (in code = usage of classes, can be created multiple times)
   * the match defines, when it triggers -> when it calls the constraintTemplate for validation 
 
 ```
@@ -1758,6 +1799,8 @@ spec:
 
 ```
 kubectl apply -f .
+## should no appear 
+kubectl get svc my-service-disallowed
 ```
 
 ```
@@ -1780,10 +1823,11 @@ cd blockjob
 ```
 
 ```
-nano constraint-template.yaml
+nano 01-constraint-template.yaml
 ```
 
 ```
+apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
 metadata:
   name: k8sblockjob
@@ -1814,18 +1858,17 @@ spec:
 ```
 kubectl apply -f .
 ## Was it sucessfully parsed and compiled ?
-kubectl describe -f constraint-template.yaml
+kubectl describe -f 01-constraint-template.yaml
 ```
 
 
-### Step 2: Create contraint 
+### Step 2: Create constraint 
 
 ```
-nano constraint.yaml
+nano 02-constraint.yaml
 ```
 
 ```
-cat 02-constraint.yaml
 apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sBlockJob
 metadata:
@@ -1922,7 +1965,7 @@ kubectl apply -f pod.yaml
   * This was done here: [Signing an image with cosign](/security/signing-images/01-signing.md)
     
 
-### Step 1: Install Connaissuer with helm 
+### Step 1: Install Connaisseur with helm 
 
 ```
 cd
@@ -2016,7 +2059,7 @@ helm upgrade connaisseur connaisseur/connaisseur --install --create-namespace --
 ```
 ## create namespace
 kubectl create ns app1
-kubectl label ns app1 securesystemsengineering.connaisseur/xwebhook=validate
+kubectl label ns app1 securesystemsengineering.connaisseur/webhook=validate
 ```
 
 ### Step 3: Try to run image in namespace 
@@ -2062,6 +2105,10 @@ kubectl explain pod.spec.automountServiceAccountToken
     * BUT: be careful whom you trust 
 
 ## The SecurityContext
+
+### appArmor example
+
+  * https://kubernetes.io/docs/tutorials/security/apparmor/
 
 ## Network Policies
 
@@ -2132,7 +2179,7 @@ spec:
 ```
 
 ```
-kubectl -n policy-demo-$HORT apply -f . 
+kubectl -n policy-demo-$SHORT apply -f . 
 ```
 
 ### Step 2: Testing access without any rules  
@@ -2183,7 +2230,7 @@ kubectl run --namespace=policy-demo-$SHORT access --rm -ti --image busybox
 wget -q nginx -O -
 ```
 
-### Step 5: Allow access von pods mit dem Label run=access (alle mit run gestarteten pods mit namen access haben dieses label per default)
+### Step 5: Allow access vof pods with the Label run=access (all pods startet with run with the name access, do have this label by default)
 
 ```
 nano 04-access-nginx.yaml 
@@ -2244,6 +2291,10 @@ kubectl delete ns policy-demo-$SHORT
 ### Ref:
 
   * https://projectcalico.docs.tigera.io/security/tutorials/kubernetes-policy-basic
+
+### CNI Benchmarks
+
+  * https://itnext.io/benchmark-results-of-kubernetes-network-plugins-cni-over-40gbit-s-network-2024-156f085a5e4e
 
 ## ServiceMesh
 
@@ -2363,8 +2414,279 @@ It provides a standardized approach to manage and orchestrate communication with
 
 
   * https://livewyer.io/blog/2024/06/06/comparison-of-service-meshes-part-two/
+  * https://github.com/livewyer-ops/poc-servicemesh2024/blob/main/docs/test-report-istio.md
 
 ## Image Security
+
+### When to scan ?
+
+
+### When to scan ?
+
+  * In Development
+  * When Building Software (before pushing to the registry)
+  * Before Deploying Software
+  * In Production
+  * Ongoing in the registry itself 
+
+### Conceptional Ideas 
+
+  1. Scan the image when built before being pushed
+  1. In Kubernetes Cluster only images from your corporate private registry
+     and k8s.io 
+     (Option: Only allow signed images, where signing is verified)  
+  1. (Policy) To always pull when starting a new Deployment,Pod,Statefulset (private repo)  
+
+### Why ? 
+
+  * We want to be sure, our system is not compromised
+  * One way of compromising is an malicious image, that we use
+  * We want to avoid this.
+
+### Which approach do we take here....
+
+  * For our own images, that we build, we want to be sure, they are all "clean" before being pushed to the registry
+
+
+
+### Example Image Security Scanning - using gitlab and trivy
+
+
+### Pre-Thoughts 
+
+ * Gitlab offers a security scanner based on Trivy
+ * BUT: This scanner tests already uploading images
+ * If we think about ShiftLeft-approach (Security early) on, this might not be the best option
+
+### What needs to be done ?
+
+  1. We want to scan directly after building the image, but before pushing
+  1. If we have vulnerabilities with CRITICAL-Score (CVE), the pipeline will fail (and it stops)
+     * Image is not uploaded 
+
+### Trivy modes 
+
+  * Trivy can be used standalone or as client/server
+  * in our case, we will use it standalone 
+
+### Demonstration:
+
+  * https://gitlab.com/jmetzger/container-scanning-session
+
+```
+stages:
+  - prebuild
+  - build
+
+prebuild:
+  stage: prebuild
+  image:
+    name: docker.io/curlimages/curl:8.3.0
+    entrypoint: [""]
+  script:
+    - curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b $CI_PROJECT_DIR v0.45.1
+    - curl -L --output - https://github.com/google/go-containerregistry/releases/download/v0.16.1/go-containerregistry_Linux_x86_64.tar.gz | tar -xz crane
+  artifacts:
+    paths:
+      - crane
+      - trivy
+
+build image:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:v1.23.2-debug
+    entrypoint: [""]
+  variables:
+    DOCKER_IMAGE: "${CI_REGISTRY_IMAGE}:${CI_COMMIT_SHORT_SHA}"
+    TRIVY_INSECURE: "true"
+    TRIVY_NO_PROGRESS: "true"
+  script:
+    - /kaniko/executor
+      --context $CI_PROJECT_DIR
+      --dockerfile $CI_PROJECT_DIR/Dockerfile
+      --no-push
+      --tar-path image.tar
+    - ./trivy image 
+      --ignore-unfixed 
+      --exit-code 0 
+      --severity HIGH 
+      --input image.tar
+    - ./trivy image
+      --ignore-unfixed
+      --exit-code 1
+      --severity CRITICAL
+      --input image.tar
+    - ./crane auth login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - ./crane push image.tar $DOCKER_IMAGE
+
+```
+
+
+
+### References: 
+
+  * https://bluelight.co/blog/how-to-set-up-trivy-scanner-in-gitlab-ci-guide
+  * https://gitlab.com/bluelightco/blog-examples/trivy
+  
+
+## Hacking Sessions
+
+### Hacking with HostPID
+
+## Extras
+
+### Canary deployment with basic kubernetes mechanisms 
+
+
+### Phase 1: stable application (without canary)  
+
+```
+cd
+cd manifests
+mkdir ab 
+cd ab 
+```
+
+```
+## vi 01-cm-version1.yml 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-version-1
+data:
+  index.html: |
+    <html>
+    <h1>Welcome to Version 1</h1>
+    </br>
+    <h1>Hi! This is a configmap Index file Version 1 </h1>
+    </html>
+```
+
+```
+## vi 02-deployment-v1.yml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-v1
+spec:
+  selector:
+    matchLabels:
+      version: v1
+  replicas: 20
+  template:
+    metadata:
+      labels:
+        app: nginx
+        version: v1
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+            - name: nginx-index-file
+              mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-index-file
+        configMap:
+          name: nginx-version-1
+```
+
+```
+## vi 05-svc.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx
+  labels:
+    svc: nginx
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: nginx
+```
+
+```
+kubectl apply -f .
+kubectl run -it --rm podtest --image=busybox 
+```
+
+```
+## wget -O - http://my-nginx.default.svc.cluster.local  
+while [ true ]; do wget -O - http://my-nginx.default.svc.cluster.local; done  
+```
+
+
+### Step 2: Additional Deployment on top (only 2 vs. 20) 
+
+```
+nano 03-cm-version2.yml
+```
+
+```
+## vi 03-cm-version2.yml 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-version-2
+data:
+  index.html: |
+    <html>
+    <h1>Welcome to Version 2</h1>
+    </br>
+    <h1>Hi! This is a configmap Index file Version 2 </h1>
+    </html>
+```
+
+```
+nano 04-deployment-v2.yml
+```
+
+```
+## vi 04-deployment-v2.yml 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deploy-v2
+spec:
+  selector:
+    matchLabels:
+      version: v2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: nginx
+        version: v2
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+            - name: nginx-index-file
+              mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: nginx-index-file
+        configMap:
+          name: nginx-version-2
+```
+
+```
+kubectl apply -f .
+kubectl run -it --rm podtest --image=busybox 
+```
+
+```
+## wget -O - http://my-nginx.default.svc.cluster.local  
+while [ true ]; do wget -O - http://my-nginx.default.svc.cluster.local; done  
+```
+
 
 ## Documentation
 
