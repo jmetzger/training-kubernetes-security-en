@@ -15,6 +15,7 @@ nano constraint-template.yaml
 ```
 
 ```
+apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
 metadata:
   name: k8sblockjob
