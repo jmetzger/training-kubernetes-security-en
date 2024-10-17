@@ -79,11 +79,15 @@ kubectl run -it --rm podtest --image=busybox
 
 ```
 # wget -O - http://my-nginx.default.svc.cluster.local  
-while [ true ] do wget -O - http://my-nginx.default.svc.cluster.local; done  
+while [ true ]; do wget -O - http://my-nginx.default.svc.cluster.local; done  
 ```
 
 
+## Step 2: Additional Deployment on top (only 2 vs. 20) 
 
+```
+nano 03-cm-version2.yml
+```
 
 ```
 # vi 03-cm-version2.yml 
@@ -98,6 +102,10 @@ data:
     </br>
     <h1>Hi! This is a configmap Index file Version 2 </h1>
     </html>
+```
+
+```
+nano 04-deployment-v2.yml
 ```
 
 ```
@@ -131,14 +139,13 @@ spec:
           name: nginx-version-2
 ```
 
-
+```
+kubectl apply -f .
+kubectl run -it --rm podtest --image=busybox 
+```
 
 ```
-kubectl apply -f . 
-# get external ip  
-kubectl get nodes -o wide 
-# get port
-kubectl get svc my-nginx -o wide 
-# test it with curl apply it multiple time (at least ten times)
-curl <external-ip>:<node-port>
+# wget -O - http://my-nginx.default.svc.cluster.local  
+while [ true ]; do wget -O - http://my-nginx.default.svc.cluster.local; done  
 ```
+
