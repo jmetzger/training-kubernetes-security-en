@@ -2,9 +2,9 @@
 
 ## What does it do ? 
 
-  * Runs as ValidationAdmissionWebhook
+  * Runs as MutateAdmissionWebhook
   * Intercepts all the calls and finds out, if the call holds images to be used 
-  * Verifies thes images with public keys.
+  * Verifies these images with public keys.
   * Denies the call, if this fails
 
 ## Suppported signing solutions 
