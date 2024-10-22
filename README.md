@@ -92,7 +92,7 @@
      * [Example Image Security Scanning - using gitlab and trivy](security/scanning-containers/02-example-trivy-gitlab.md)
 
   1. Hacking Sessions
-     * [Hacking with HostPID](/explore/01-hack-session-hostpid.md)
+     * [Hacking with HostPID](/security/explore/01-hack-session-hostpid.md)
     
   1. Extras
      * [Canary deployment with basic kubernetes mechanisms ](kubectl-examples/08-canary-deployment.md)
