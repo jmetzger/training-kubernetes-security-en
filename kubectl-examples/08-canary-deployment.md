@@ -1,4 +1,4 @@
-# Exercise: AB-Deployment 
+# Exercise: Canary-Deployment 
 
 ## Phase 1: stable application (without canary)  
 
