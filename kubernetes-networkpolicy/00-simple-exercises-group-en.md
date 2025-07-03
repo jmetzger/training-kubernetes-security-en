@@ -77,6 +77,7 @@ kubectl run --namespace=policy-demo-$SHORT access --rm -ti --image busybox
 ```
 # Within the shell/after prompt
 wget -q nginx -O -
+exit
 ```
 
 ```
