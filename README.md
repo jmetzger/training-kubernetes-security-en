@@ -2,6 +2,9 @@
 
 ## Agenda 
 
+  1. Vorbereitung
+     * [Self-Service Cluster ausrollen](/monitoring/training-stack/install.md)
+
   1. Starting
      * [The truth about security](/security/truth.md)
      * [The architecture of Kubernetes](kubernetes/architecture.md)
